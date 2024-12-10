@@ -218,6 +218,43 @@ public class Graph {
   // | Observers |
   // +-----------+
 
+
+
+  /**
+   * 
+   * @param source
+   * @param sink
+   */
+  void shortestPath(int source, int sink) {
+    Integer[] distance = new Integer[vertices.length];
+    for (int i = 0; i < distance.length; i++) {
+      if (i != source) {
+        distance[i] = null;
+      }
+    }
+
+    int U = source;
+    while (U != sink && !this.isMarked(sink)) {
+
+    }
+  }
+
+  int findShortestDistance(Integer[] distances) {
+    Integer minIndex = null;
+    for (int i = 0; i < distances.length; i++) {
+      if (distances[i] != null) {
+        if (minIndex == null) {
+          minIndex = i;
+        } else if (distances[minIndex] > distances[i]) {
+          minIndex = i;
+        }
+      }
+    }
+    return minIndex;
+  }
+
+
+
   /**
    * Dump the graph in a not very useful way.
    *
